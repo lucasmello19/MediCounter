@@ -3,31 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B147C482B0722A400F6C41B /* MediCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B147C472B0722A400F6C41B /* MediCounterApp.swift */; };
-		2B147C4A2B0722A400F6C41B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B147C492B0722A400F6C41B /* Persistence.swift */; };
-		2B147C4D2B0722A400F6C41B /* MediCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B147C4B2B0722A400F6C41B /* MediCounter.xcdatamodeld */; };
-		2B147C4F2B0722A400F6C41B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B147C4E2B0722A400F6C41B /* ContentView.swift */; };
-		2B147C512B0722A700F6C41B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B147C502B0722A700F6C41B /* Assets.xcassets */; };
-		2B147C552B0722A700F6C41B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B147C542B0722A700F6C41B /* Preview Assets.xcassets */; };
+		2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620F42B072FF30042F5BD /* AppDelegate.swift */; };
+		2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620F62B072FF30042F5BD /* SceneDelegate.swift */; };
+		2B4620F92B072FF30042F5BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620F82B072FF30042F5BD /* ViewController.swift */; };
+		2B4620FC2B072FF30042F5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4620FA2B072FF30042F5BD /* Main.storyboard */; };
+		2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620FD2B072FF30042F5BD /* MediCounter.xcdatamodeld */; };
+		2B4621012B072FFD0042F5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4621002B072FFD0042F5BD /* Assets.xcassets */; };
+		2B4621042B072FFD0042F5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B147C442B0722A400F6C41B /* MediCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B147C472B0722A400F6C41B /* MediCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediCounterApp.swift; sourceTree = "<group>"; };
-		2B147C492B0722A400F6C41B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		2B147C4C2B0722A400F6C41B /* MediCounter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediCounter.xcdatamodel; sourceTree = "<group>"; };
-		2B147C4E2B0722A400F6C41B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2B147C502B0722A700F6C41B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2B147C522B0722A700F6C41B /* MediCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediCounter.entitlements; sourceTree = "<group>"; };
-		2B147C542B0722A700F6C41B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2B4620F12B072FF30042F5BD /* MediCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4620F42B072FF30042F5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B4620F62B072FF30042F5BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2B4620F82B072FF30042F5BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B4620FB2B072FF30042F5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B4620FE2B072FF30042F5BD /* MediCounter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediCounter.xcdatamodel; sourceTree = "<group>"; };
+		2B4621002B072FFD0042F5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B4621032B072FFD0042F5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2B4621052B072FFD0042F5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2B147C412B0722A400F6C41B /* Frameworks */ = {
+		2B4620EE2B072FF30042F5BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,54 +39,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B147C3B2B0722A400F6C41B = {
+		2B4620E82B072FF30042F5BD = {
 			isa = PBXGroup;
 			children = (
-				2B147C462B0722A400F6C41B /* MediCounter */,
-				2B147C452B0722A400F6C41B /* Products */,
+				2B4620F32B072FF30042F5BD /* MediCounter */,
+				2B4620F22B072FF30042F5BD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2B147C452B0722A400F6C41B /* Products */ = {
+		2B4620F22B072FF30042F5BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B147C442B0722A400F6C41B /* MediCounter.app */,
+				2B4620F12B072FF30042F5BD /* MediCounter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B147C462B0722A400F6C41B /* MediCounter */ = {
+		2B4620F32B072FF30042F5BD /* MediCounter */ = {
 			isa = PBXGroup;
 			children = (
-				2B147C472B0722A400F6C41B /* MediCounterApp.swift */,
-				2B147C492B0722A400F6C41B /* Persistence.swift */,
-				2B147C4E2B0722A400F6C41B /* ContentView.swift */,
-				2B147C502B0722A700F6C41B /* Assets.xcassets */,
-				2B147C522B0722A700F6C41B /* MediCounter.entitlements */,
-				2B147C4B2B0722A400F6C41B /* MediCounter.xcdatamodeld */,
-				2B147C532B0722A700F6C41B /* Preview Content */,
+				2B4620F42B072FF30042F5BD /* AppDelegate.swift */,
+				2B4620F62B072FF30042F5BD /* SceneDelegate.swift */,
+				2B4620F82B072FF30042F5BD /* ViewController.swift */,
+				2B4620FA2B072FF30042F5BD /* Main.storyboard */,
+				2B4621002B072FFD0042F5BD /* Assets.xcassets */,
+				2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */,
+				2B4621052B072FFD0042F5BD /* Info.plist */,
+				2B4620FD2B072FF30042F5BD /* MediCounter.xcdatamodeld */,
 			);
 			path = MediCounter;
-			sourceTree = "<group>";
-		};
-		2B147C532B0722A700F6C41B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				2B147C542B0722A700F6C41B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B147C432B0722A400F6C41B /* MediCounter */ = {
+		2B4620F02B072FF30042F5BD /* MediCounter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B147C582B0722A700F6C41B /* Build configuration list for PBXNativeTarget "MediCounter" */;
+			buildConfigurationList = 2B4621082B072FFD0042F5BD /* Build configuration list for PBXNativeTarget "MediCounter" */;
 			buildPhases = (
-				2B147C402B0722A400F6C41B /* Sources */,
-				2B147C412B0722A400F6C41B /* Frameworks */,
-				2B147C422B0722A400F6C41B /* Resources */,
+				2B4620ED2B072FF30042F5BD /* Sources */,
+				2B4620EE2B072FF30042F5BD /* Frameworks */,
+				2B4620EF2B072FF30042F5BD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -92,77 +87,97 @@
 			);
 			name = MediCounter;
 			productName = MediCounter;
-			productReference = 2B147C442B0722A400F6C41B /* MediCounter.app */;
+			productReference = 2B4620F12B072FF30042F5BD /* MediCounter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2B147C3C2B0722A400F6C41B /* Project object */ = {
+		2B4620E92B072FF30042F5BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					2B147C432B0722A400F6C41B = {
-						CreatedOnToolsVersion = 15.0.1;
+					2B4620F02B072FF30042F5BD = {
+						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 2B147C3F2B0722A400F6C41B /* Build configuration list for PBXProject "MediCounter" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 2B4620EC2B072FF30042F5BD /* Build configuration list for PBXProject "MediCounter" */;
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2B147C3B2B0722A400F6C41B;
-			productRefGroup = 2B147C452B0722A400F6C41B /* Products */;
+			mainGroup = 2B4620E82B072FF30042F5BD;
+			productRefGroup = 2B4620F22B072FF30042F5BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B147C432B0722A400F6C41B /* MediCounter */,
+				2B4620F02B072FF30042F5BD /* MediCounter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B147C422B0722A400F6C41B /* Resources */ = {
+		2B4620EF2B072FF30042F5BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B147C552B0722A700F6C41B /* Preview Assets.xcassets in Resources */,
-				2B147C512B0722A700F6C41B /* Assets.xcassets in Resources */,
+				2B4621042B072FFD0042F5BD /* LaunchScreen.storyboard in Resources */,
+				2B4621012B072FFD0042F5BD /* Assets.xcassets in Resources */,
+				2B4620FC2B072FF30042F5BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2B147C402B0722A400F6C41B /* Sources */ = {
+		2B4620ED2B072FF30042F5BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B147C4D2B0722A400F6C41B /* MediCounter.xcdatamodeld in Sources */,
-				2B147C482B0722A400F6C41B /* MediCounterApp.swift in Sources */,
-				2B147C4F2B0722A400F6C41B /* ContentView.swift in Sources */,
-				2B147C4A2B0722A400F6C41B /* Persistence.swift in Sources */,
+				2B4620F92B072FF30042F5BD /* ViewController.swift in Sources */,
+				2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */,
+				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
+				2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		2B4620FA2B072FF30042F5BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B4620FB2B072FF30042F5BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B4621032B072FFD0042F5BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		2B147C562B0722A700F6C41B /* Debug */ = {
+		2B4621062B072FFD0042F5BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -192,8 +207,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -207,23 +221,24 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		2B147C572B0722A700F6C41B /* Release */ = {
+		2B4621072B072FFD0042F5BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -253,8 +268,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -262,79 +276,66 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		2B147C592B0722A700F6C41B /* Debug */ = {
+		2B4621092B072FFD0042F5BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MediCounter/MediCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MediCounter/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 93R7Y3H365;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_FILE = MediCounter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MediCounter.MediCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2B147C5A2B0722A700F6C41B /* Release */ = {
+		2B46210A2B072FFD0042F5BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MediCounter/MediCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MediCounter/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 93R7Y3H365;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_FILE = MediCounter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MediCounter.MediCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,20 +345,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B147C3F2B0722A400F6C41B /* Build configuration list for PBXProject "MediCounter" */ = {
+		2B4620EC2B072FF30042F5BD /* Build configuration list for PBXProject "MediCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B147C562B0722A700F6C41B /* Debug */,
-				2B147C572B0722A700F6C41B /* Release */,
+				2B4621062B072FFD0042F5BD /* Debug */,
+				2B4621072B072FFD0042F5BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B147C582B0722A700F6C41B /* Build configuration list for PBXNativeTarget "MediCounter" */ = {
+		2B4621082B072FFD0042F5BD /* Build configuration list for PBXNativeTarget "MediCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B147C592B0722A700F6C41B /* Debug */,
-				2B147C5A2B0722A700F6C41B /* Release */,
+				2B4621092B072FFD0042F5BD /* Debug */,
+				2B46210A2B072FFD0042F5BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -365,17 +366,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2B147C4B2B0722A400F6C41B /* MediCounter.xcdatamodeld */ = {
+		2B4620FD2B072FF30042F5BD /* MediCounter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2B147C4C2B0722A400F6C41B /* MediCounter.xcdatamodel */,
+				2B4620FE2B072FF30042F5BD /* MediCounter.xcdatamodel */,
 			);
-			currentVersion = 2B147C4C2B0722A400F6C41B /* MediCounter.xcdatamodel */;
+			currentVersion = 2B4620FE2B072FF30042F5BD /* MediCounter.xcdatamodel */;
 			path = MediCounter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 2B147C3C2B0722A400F6C41B /* Project object */;
+	rootObject = 2B4620E92B072FF30042F5BD /* Project object */;
 }
