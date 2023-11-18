@@ -16,10 +16,12 @@
 		2B6B80D92B07376500240B06 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6B80D72B07376500240B06 /* RegisterViewController.xib */; };
 		2B6B80DC2B07381E00240B06 /* RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6B80DA2B07381E00240B06 /* RegisterCell.swift */; };
 		2B6B80DD2B07381E00240B06 /* RegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6B80DB2B07381E00240B06 /* RegisterCell.xib */; };
-		2B6B80E42B073B1900240B06 /* FormRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6B80E22B073B1900240B06 /* FormRegisterViewController.swift */; };
-		2B6B80E52B073B1900240B06 /* FormRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6B80E32B073B1900240B06 /* FormRegisterViewController.xib */; };
 		2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6B80E72B07481F00240B06 /* TabBarController.swift */; };
 		2B6B80EA2B07481F00240B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6B80E82B07481F00240B06 /* Main.storyboard */; };
+		2BAA09132B094D370032DAF9 /* FormRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA09112B094D370032DAF9 /* FormRegisterViewController.swift */; };
+		2BAA09142B094D370032DAF9 /* FormRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */; };
+		2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */; };
+		2BAA09182B094D7B0032DAF9 /* MediHoursCountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +36,12 @@
 		2B6B80D72B07376500240B06 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		2B6B80DA2B07381E00240B06 /* RegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCell.swift; sourceTree = "<group>"; };
 		2B6B80DB2B07381E00240B06 /* RegisterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterCell.xib; sourceTree = "<group>"; };
-		2B6B80E22B073B1900240B06 /* FormRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRegisterViewController.swift; sourceTree = "<group>"; };
-		2B6B80E32B073B1900240B06 /* FormRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormRegisterViewController.xib; sourceTree = "<group>"; };
 		2B6B80E72B07481F00240B06 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2B6B80E82B07481F00240B06 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2BAA09112B094D370032DAF9 /* FormRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRegisterViewController.swift; sourceTree = "<group>"; };
+		2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormRegisterViewController.xib; sourceTree = "<group>"; };
+		2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediHoursCountCell.swift; sourceTree = "<group>"; };
+		2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediHoursCountCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				2B6B80E82B07481F00240B06 /* Main.storyboard */,
 				2B6B80E72B07481F00240B06 /* TabBarController.swift */,
 				2B6B80D52B07374800240B06 /* Register */,
+				2BAA09102B094D000032DAF9 /* FormRegister */,
 				2B4621002B072FFD0042F5BD /* Assets.xcassets */,
 				2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */,
 				2B4621052B072FFD0042F5BD /* Info.plist */,
@@ -90,10 +95,19 @@
 				2B6B80D72B07376500240B06 /* RegisterViewController.xib */,
 				2B6B80DA2B07381E00240B06 /* RegisterCell.swift */,
 				2B6B80DB2B07381E00240B06 /* RegisterCell.xib */,
-				2B6B80E22B073B1900240B06 /* FormRegisterViewController.swift */,
-				2B6B80E32B073B1900240B06 /* FormRegisterViewController.xib */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		2BAA09102B094D000032DAF9 /* FormRegister */ = {
+			isa = PBXGroup;
+			children = (
+				2BAA09112B094D370032DAF9 /* FormRegisterViewController.swift */,
+				2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */,
+				2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */,
+				2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */,
+			);
+			path = FormRegister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4621042B072FFD0042F5BD /* LaunchScreen.storyboard in Resources */,
+				2BAA09182B094D7B0032DAF9 /* MediHoursCountCell.xib in Resources */,
 				2B4621012B072FFD0042F5BD /* Assets.xcassets in Resources */,
-				2B6B80E52B073B1900240B06 /* FormRegisterViewController.xib in Resources */,
+				2BAA09142B094D370032DAF9 /* FormRegisterViewController.xib in Resources */,
 				2B6B80EA2B07481F00240B06 /* Main.storyboard in Resources */,
 				2B6B80DD2B07381E00240B06 /* RegisterCell.xib in Resources */,
 				2B6B80D92B07376500240B06 /* RegisterViewController.xib in Resources */,
@@ -170,10 +185,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B6B80E42B073B1900240B06 /* FormRegisterViewController.swift in Sources */,
 				2B6B80D82B07376500240B06 /* RegisterViewController.swift in Sources */,
+				2BAA09132B094D370032DAF9 /* FormRegisterViewController.swift in Sources */,
 				2B6B80DC2B07381E00240B06 /* RegisterCell.swift in Sources */,
 				2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */,
+				2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
 				2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */,
@@ -315,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93R7Y3H365;
@@ -332,6 +349,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MediCounter.MediCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93R7Y3H365;
@@ -360,6 +379,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MediCounter.MediCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,15 +1,21 @@
 //
-//  RegisterCell.swift
+//  MediHoursCountCell.swift
 //  MediCounter
 //
 
 import UIKit
 
-class RegisterCell: UITableViewCell {
+class MediHoursCountCell: UITableViewCell {
 
+    @IBOutlet weak var idxLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setupCell(index: Int) {
+        idxLabel.text = "\(index)-"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

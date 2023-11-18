@@ -2,8 +2,6 @@
 //  RegisterViewController.swift
 //  MediCounter
 //
-//  Created by Lucas Mello on 17/11/23.
-//
 
 import UIKit
 
@@ -15,6 +13,7 @@ class RegisterViewController: UIViewController {
         self.tableView.estimatedRowHeight = 88.0
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")
+        tableView.allowsMultipleSelectionDuringEditing = false
     }
 
     @IBAction func onClickNewRegister(_ sender: Any) {
@@ -24,7 +23,7 @@ class RegisterViewController: UIViewController {
     }
 }
 
-extension RegisterViewController: UITableViewDataSource {
+extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -37,6 +36,26 @@ extension RegisterViewController: UITableViewDataSource {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // Ações de deslizamento à direita
+        let acao1 = UIContextualAction(style: .normal, title: "Editar") { (action, view, completionHandler) in
+            // Lógica da ação 1
+            completionHandler(true)
+        }
+        acao1.backgroundColor = UIColor.blue
+
+        let acao2 = UIContextualAction(style: .normal, title: "Apagar") { (action, view, completionHandler) in
+            // Lógica da ação 2
+            completionHandler(true)
+        }
+        acao2.backgroundColor = UIColor.red
+
+        // Configuração das ações de deslizamento à direita
+        let configuracao = UISwipeActionsConfiguration(actions: [acao2, acao1])
+        configuracao.performsFirstActionWithFullSwipe = false
+        return configuracao
     }
 }
 

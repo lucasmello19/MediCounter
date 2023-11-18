@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  MediCounter
 //
-//  Created by Lucas de Mello Cesar on 17/11/23.
-//
 
 import UIKit
 import CoreData
