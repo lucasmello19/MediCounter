@@ -78,5 +78,4 @@ class DataManager {
       context.delete(medicament)
       save()
     }
-
 }

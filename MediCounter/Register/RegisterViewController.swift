@@ -18,7 +18,11 @@ class RegisterViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        updateMedicaments()
+    }
+    
+    func updateMedicaments() {
         medicaments = DataManager.shared.medicaments()
         tableView.reloadData()
     }
@@ -46,23 +50,21 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        // Ações de deslizamento à direita
-        let acao1 = UIContextualAction(style: .normal, title: "Editar") { (action, view, completionHandler) in
-            // Lógica da ação 1
+        let delete = UIContextualAction(style: .normal, title: "Apagar") { (action, view, completionHandler) in
+            let medicament = self.medicaments[indexPath.row]
+            let shots = DataManager.shared.shots(medicament: medicament)
+            for shot in shots {
+                DataManager.shared.deleteShot(shot: shot)
+            }
+            DataManager.shared.deleteMedicament(medicament: medicament)
+            self.updateMedicaments()
             completionHandler(true)
         }
-        acao1.backgroundColor = UIColor.blue
+        delete.backgroundColor = UIColor.red
 
-        let acao2 = UIContextualAction(style: .normal, title: "Apagar") { (action, view, completionHandler) in
-            // Lógica da ação 2
-            completionHandler(true)
-        }
-        acao2.backgroundColor = UIColor.red
-
-        // Configuração das ações de deslizamento à direita
-        let configuracao = UISwipeActionsConfiguration(actions: [acao2, acao1])
-        configuracao.performsFirstActionWithFullSwipe = false
-        return configuracao
+        let config = UISwipeActionsConfiguration(actions: [delete])
+        config.performsFirstActionWithFullSwipe = false
+        return config
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
