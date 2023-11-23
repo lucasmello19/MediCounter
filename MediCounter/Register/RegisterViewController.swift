@@ -7,6 +7,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var medicaments: [Medicament] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +15,12 @@ class RegisterViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")
         tableView.allowsMultipleSelectionDuringEditing = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        medicaments = DataManager.shared.medicaments()
+        tableView.reloadData()
     }
 
     @IBAction func onClickNewRegister(_ sender: Any) {
@@ -25,13 +32,13 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return medicaments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "RegisterCell"
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RegisterCell {
-
+            cell.setupName(medicament: medicaments[indexPath.row].medicament ?? String())
             return cell
         } else {
             return UITableViewCell()

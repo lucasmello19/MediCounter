@@ -10,7 +10,7 @@ class FormRegisterViewController: UIViewController {
     
     @IBOutlet weak var tableView: AutoSizingTableView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var txtMedicament: UITextField!
     
     
     override func viewDidLoad() {
@@ -44,6 +44,12 @@ class FormRegisterViewController: UIViewController {
     @IBAction func onClickAdd(_ sender: Any) {
         hoursCount.append(String())
         tableView.reloadData()
+    }
+    
+    @IBAction func onClickSave(_ sender: Any) {
+        DataManager.shared.medicament(name: txtMedicament.text ?? "")
+        DataManager.shared.save()
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

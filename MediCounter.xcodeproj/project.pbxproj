@@ -26,6 +26,11 @@
 		2BAA09142B094D370032DAF9 /* FormRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */; };
 		2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */; };
 		2BAA09182B094D7B0032DAF9 /* MediHoursCountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */; };
+		2BC5DAAD2B0F48D400C59845 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DAA82B0F48D400C59845 /* DataManager.swift */; };
+		2BC5DAAE2B0F48D400C59845 /* Medicament+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DAA92B0F48D400C59845 /* Medicament+CoreDataProperties.swift */; };
+		2BC5DAAF2B0F48D400C59845 /* Medicament+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DAAA2B0F48D400C59845 /* Medicament+CoreDataClass.swift */; };
+		2BC5DAB02B0F48D400C59845 /* Shot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DAAB2B0F48D400C59845 /* Shot+CoreDataClass.swift */; };
+		2BC5DAB12B0F48D400C59845 /* Shot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5DAAC2B0F48D400C59845 /* Shot+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormRegisterViewController.xib; sourceTree = "<group>"; };
 		2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediHoursCountCell.swift; sourceTree = "<group>"; };
 		2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediHoursCountCell.xib; sourceTree = "<group>"; };
+		2BC5DAA82B0F48D400C59845 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2BC5DAA92B0F48D400C59845 /* Medicament+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medicament+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BC5DAAA2B0F48D400C59845 /* Medicament+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medicament+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2BC5DAAB2B0F48D400C59845 /* Shot+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2BC5DAAC2B0F48D400C59845 /* Shot+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shot+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 		2B4620F32B072FF30042F5BD /* MediCounter */ = {
 			isa = PBXGroup;
 			children = (
+				2BC5DAA72B0F48D400C59845 /* CoreData */,
 				2B4620F42B072FF30042F5BD /* AppDelegate.swift */,
 				2B4620F62B072FF30042F5BD /* SceneDelegate.swift */,
 				2B6B80E82B07481F00240B06 /* Main.storyboard */,
@@ -128,6 +139,18 @@
 				2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */,
 			);
 			path = FormRegister;
+			sourceTree = "<group>";
+		};
+		2BC5DAA72B0F48D400C59845 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2BC5DAA82B0F48D400C59845 /* DataManager.swift */,
+				2BC5DAA92B0F48D400C59845 /* Medicament+CoreDataProperties.swift */,
+				2BC5DAAA2B0F48D400C59845 /* Medicament+CoreDataClass.swift */,
+				2BC5DAAB2B0F48D400C59845 /* Shot+CoreDataClass.swift */,
+				2BC5DAAC2B0F48D400C59845 /* Shot+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,11 +234,16 @@
 				2B3926792B0F3D6B00162DA1 /* TookMedicineViewController.swift in Sources */,
 				2BAA09132B094D370032DAF9 /* FormRegisterViewController.swift in Sources */,
 				2B6B80DC2B07381E00240B06 /* RegisterCell.swift in Sources */,
+				2BC5DAAE2B0F48D400C59845 /* Medicament+CoreDataProperties.swift in Sources */,
 				2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */,
 				2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */,
+				2BC5DAB02B0F48D400C59845 /* Shot+CoreDataClass.swift in Sources */,
 				2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */,
+				2BC5DAAD2B0F48D400C59845 /* DataManager.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
+				2BC5DAAF2B0F48D400C59845 /* Medicament+CoreDataClass.swift in Sources */,
+				2BC5DAB12B0F48D400C59845 /* Shot+CoreDataProperties.swift in Sources */,
 				2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="scrollView" destination="EyA-e3-md9" id="bJF-93-mN3"/>
                 <outlet property="tableView" destination="dRB-SG-m4f" id="vCi-cd-tM4"/>
+                <outlet property="txtMedicament" destination="Ma3-Tq-C08" id="3gS-G4-AhA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,13 +29,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1046"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73l-U1-xEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="427.33333333333331"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="428.66666666666669"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-Xd-Usk">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="427.33333333333331"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="428.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="c0H-g8-g7s">
-                                                    <rect key="frame" x="0.0" y="24" width="393" height="379.33333333333331"/>
+                                                    <rect key="frame" x="0.0" y="24" width="393" height="380.66666666666669"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Cy-5Gs">
                                                             <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
@@ -64,7 +65,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-SG-m4f" customClass="AutoSizingTableView" customModule="MediCounter" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="67"/>
+                                                            <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="68.333333333333314"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="-1" id="ksJ-4s-xWg"/>
@@ -72,7 +73,7 @@
                                                             </connections>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-AO-b0a">
-                                                            <rect key="frame" x="0.0" y="287.33333333333331" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="288.66666666666669" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="vGg-Ji-5zW"/>
                                                             </constraints>
@@ -83,12 +84,15 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-jk-bMZ">
-                                                            <rect key="frame" x="0.0" y="345.33333333333331" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="346.66666666666669" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="7AP-30-Kcd"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Salvar"/>
+                                                            <connections>
+                                                                <action selector="onClickSave:" destination="-1" eventType="touchUpInside" id="IRC-4o-j7V"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
