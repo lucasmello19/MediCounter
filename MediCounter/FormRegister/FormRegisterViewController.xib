@@ -28,24 +28,34 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1046"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73l-U1-xEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="322"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="427.33333333333331"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-Xd-Usk">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="322"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="427.33333333333331"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="c0H-g8-g7s">
-                                                    <rect key="frame" x="24" y="24" width="345" height="274"/>
+                                                    <rect key="frame" x="0.0" y="24" width="393" height="379.33333333333331"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do medicamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ma3-Tq-C08">
-                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="34"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Cy-5Gs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do medicamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ma3-Tq-C08">
+                                                                    <rect key="frame" x="24" y="0.0" width="345" height="128"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="34" id="hOc-TB-Qpv"/>
+                                                                <constraint firstItem="Ma3-Tq-C08" firstAttribute="top" secondItem="RJm-Cy-5Gs" secondAttribute="top" id="VvM-mq-MzV"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ma3-Tq-C08" secondAttribute="trailing" constant="24" id="j94-1u-RlY"/>
+                                                                <constraint firstAttribute="height" constant="34" id="jS4-rJ-JMq"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Ma3-Tq-C08" secondAttribute="bottom" id="kxd-ax-2vS"/>
+                                                                <constraint firstItem="Ma3-Tq-C08" firstAttribute="leading" secondItem="RJm-Cy-5Gs" secondAttribute="leading" constant="24" id="xeO-3c-w8u"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posologia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKd-pK-FdI">
-                                                            <rect key="frame" x="0.0" y="58.000000000000007" width="345" height="20.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="152" width="393" height="20.333333333333343"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.329999999999998" id="hBp-e4-zKc"/>
                                                             </constraints>
@@ -54,7 +64,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-SG-m4f" customClass="AutoSizingTableView" customModule="MediCounter" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="102.33333333333336" width="345" height="55.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="67"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="-1" id="ksJ-4s-xWg"/>
@@ -62,7 +72,7 @@
                                                             </connections>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-AO-b0a">
-                                                            <rect key="frame" x="0.0" y="182" width="345" height="34"/>
+                                                            <rect key="frame" x="0.0" y="287.33333333333331" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="vGg-Ji-5zW"/>
                                                             </constraints>
@@ -73,7 +83,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-jk-bMZ">
-                                                            <rect key="frame" x="0.0" y="240" width="345" height="34"/>
+                                                            <rect key="frame" x="0.0" y="345.33333333333331" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="7AP-30-Kcd"/>
                                                             </constraints>
@@ -86,8 +96,8 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="c0H-g8-g7s" firstAttribute="top" secondItem="vcz-Xd-Usk" secondAttribute="top" constant="24" id="Hia-hH-w9o"/>
-                                                <constraint firstAttribute="trailing" secondItem="c0H-g8-g7s" secondAttribute="trailing" constant="24" id="Ocy-nL-YiR"/>
-                                                <constraint firstItem="c0H-g8-g7s" firstAttribute="leading" secondItem="vcz-Xd-Usk" secondAttribute="leading" constant="24" id="WsY-fA-Jf7"/>
+                                                <constraint firstAttribute="trailing" secondItem="c0H-g8-g7s" secondAttribute="trailing" id="Ocy-nL-YiR"/>
+                                                <constraint firstItem="c0H-g8-g7s" firstAttribute="leading" secondItem="vcz-Xd-Usk" secondAttribute="leading" id="WsY-fA-Jf7"/>
                                                 <constraint firstAttribute="bottom" secondItem="c0H-g8-g7s" secondAttribute="bottom" constant="24" id="cya-kL-2xl"/>
                                             </constraints>
                                         </view>
