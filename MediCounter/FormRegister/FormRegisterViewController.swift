@@ -6,7 +6,7 @@
 import UIKit
 
 class FormRegisterViewController: UIViewController {
-    var hoursCount: [String] = [String()]
+    var shots: [ShotVO] = [ShotVO()]
     
     @IBOutlet weak var tableView: AutoSizingTableView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -42,12 +42,15 @@ class FormRegisterViewController: UIViewController {
     }
     
     @IBAction func onClickAdd(_ sender: Any) {
-        hoursCount.append(String())
+        shots.append(ShotVO())
         tableView.reloadData()
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        DataManager.shared.medicament(name: txtMedicament.text ?? "")
+        let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? "")
+        for shot in shots {
+            _ = DataManager.shared.shot(amount: shot.amount, date: shot.date, medicament: medicament)
+        }
         DataManager.shared.save()
         self.navigationController?.popViewController(animated: true)
     }
@@ -55,14 +58,13 @@ class FormRegisterViewController: UIViewController {
 
 extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hoursCount.count
+        return shots.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "MediHoursCountCell"
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MediHoursCountCell {
-            
-            cell.setupCell(idx: indexPath.row)
+            cell.setupCell(idx: indexPath.row, shot: shots[indexPath.row])
             
             return cell
         } else {

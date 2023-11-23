@@ -55,10 +55,10 @@ class DataManager {
       return fetchedMedicaments
     }
     
-    func songs(medicament: Medicament) -> [Shot] {
+    func shots(medicament: Medicament) -> [Shot] {
       let request: NSFetchRequest<Shot> = Shot.fetchRequest()
       request.predicate = NSPredicate(format: "medicament = %@", medicament)
-      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+//      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
       var fetchedShots: [Shot] = []
       do {
           fetchedShots = try persistentContainer.viewContext.fetch(request)

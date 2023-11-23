@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TookMedicineViewController" customModule="MediCounter" customModuleProvider="target">
             <connections>
+                <outlet property="lblTitle" destination="ax8-us-Tmt" id="5JQ-jE-CCx"/>
                 <outlet property="scrollView" destination="9o9-Qc-yCW" id="6tR-V9-nuz"/>
                 <outlet property="tableView" destination="kaG-vH-rTa" id="MZg-eX-PdZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

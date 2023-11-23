@@ -35,6 +35,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-ab-4re">
                                 <rect key="frame" x="427" y="15" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onClickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="j34-0u-woR"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +60,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="sTook" destination="gEC-ab-4re" id="a7O-C0-5Rv"/>
+                <outlet property="txtAmount" destination="Aub-tK-qKt" id="tOs-uh-Af8"/>
+                <outlet property="txtHours" destination="CMB-c4-taF" id="X35-v9-gZj"/>
+            </connections>
             <point key="canvasLocation" x="-131.29770992366412" y="1.7605633802816902"/>
         </tableViewCell>
     </objects>

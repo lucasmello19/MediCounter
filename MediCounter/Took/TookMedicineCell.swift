@@ -2,22 +2,28 @@
 //  TookMedicineCell.swift
 //  MediCounter
 //
-//  Created by Lucas Mello on 23/11/23.
-//
 
 import UIKit
 
 class TookMedicineCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var sTook: UISwitch!
+    @IBOutlet weak var txtHours: UILabel!
+    @IBOutlet weak var txtAmount: UILabel!
     
+    var shot = Shot()
+    
+    func setupCell(shot: Shot) {
+        self.shot = shot
+        sTook.isOn = shot.took
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let hours = formatter.string(from: shot.date ?? Date())
+        txtHours.text = hours
+        txtAmount.text = "Quantidade: \(shot.amount)"
+    }
+
+    @IBAction func onClickSwitch(_ sender: Any) {
+        
+    }
 }

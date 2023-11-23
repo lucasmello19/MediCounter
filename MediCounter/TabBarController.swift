@@ -10,8 +10,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         self.title = "MediCounter"
         let vc = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        let vc1 = FormRegisterViewController(nibName: "FormRegisterViewController", bundle: nil)
 
-        self.viewControllers = [vc, vc1]
+        self.viewControllers = [vc]
     }
 }

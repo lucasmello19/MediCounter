@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EC8132B0FF0B2006A078C /* ShotVO.swift */; };
 		2B3926792B0F3D6B00162DA1 /* TookMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */; };
 		2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */; };
 		2B39267B2B0F3D6B00162DA1 /* TookMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		078EC8132B0FF0B2006A078C /* ShotVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotVO.swift; sourceTree = "<group>"; };
 		2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineViewController.swift; sourceTree = "<group>"; };
 		2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineCell.swift; sourceTree = "<group>"; };
 		2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TookMedicineViewController.xib; sourceTree = "<group>"; };
@@ -77,8 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */,
-				2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */,
 				2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */,
+				2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */,
 				2B3926782B0F3D6B00162DA1 /* TookMedicineCell.xib */,
 			);
 			path = Took;
@@ -103,7 +105,6 @@
 		2B4620F32B072FF30042F5BD /* MediCounter */ = {
 			isa = PBXGroup;
 			children = (
-				2BC5DAA72B0F48D400C59845 /* CoreData */,
 				2B4620F42B072FF30042F5BD /* AppDelegate.swift */,
 				2B4620F62B072FF30042F5BD /* SceneDelegate.swift */,
 				2B6B80E82B07481F00240B06 /* Main.storyboard */,
@@ -111,6 +112,7 @@
 				2B6B80D52B07374800240B06 /* Register */,
 				2BAA09102B094D000032DAF9 /* FormRegister */,
 				2B3926742B0F3D6B00162DA1 /* Took */,
+				2BC5DAA72B0F48D400C59845 /* CoreData */,
 				2B4621002B072FFD0042F5BD /* Assets.xcassets */,
 				2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */,
 				2B4621052B072FFD0042F5BD /* Info.plist */,
@@ -137,6 +139,7 @@
 				2BAA09122B094D370032DAF9 /* FormRegisterViewController.xib */,
 				2BAA09152B094D7B0032DAF9 /* MediHoursCountCell.swift */,
 				2BAA09162B094D7B0032DAF9 /* MediHoursCountCell.xib */,
+				078EC8132B0FF0B2006A078C /* ShotVO.swift */,
 			);
 			path = FormRegister;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				2BC5DAB02B0F48D400C59845 /* Shot+CoreDataClass.swift in Sources */,
 				2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */,
 				2BC5DAAD2B0F48D400C59845 /* DataManager.swift in Sources */,
+				078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
 				2BC5DAAF2B0F48D400C59845 /* Medicament+CoreDataClass.swift in Sources */,

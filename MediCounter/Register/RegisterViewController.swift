@@ -67,6 +67,7 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TookMedicineViewController(nibName: "TookMedicineViewController", bundle: nil)
+        vc.medicament = medicaments[indexPath.row]
 
         self.navigationController?.pushViewController(vc, animated: true)
     }

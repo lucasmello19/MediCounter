@@ -17,8 +17,10 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     let hourPickerView = UIPickerView()
     let hours = Array(0...23)
     
-    let minutePickerView = UIPickerView()
+//    let minutePickerView = UIPickerView()
     let minutes = Array(0...59)
+    
+    var shot = ShotVO()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == amountPickerView {
@@ -58,20 +60,17 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
             txtAmount.text = "\(amounts[row])"
         } else {
             let selectedHour = hours[hourPickerView.selectedRow(inComponent: 0)]
-            let selectedMinute = minutes[minutePickerView.selectedRow(inComponent: 1)]
+            let selectedMinute = minutes[hourPickerView.selectedRow(inComponent: 1)]
             txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
         }
     }
     
-    func setupCell(idx: Int) {
+    func setupCell(idx: Int, shot: ShotVO) {
         self.idx = idx
+        self.shot = shot
 
         hourPickerView.delegate = self
         hourPickerView.dataSource = self
-        
-        minutePickerView.delegate = self
-        minutePickerView.dataSource = self
-
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -97,13 +96,24 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     
     @objc func setupHours() {
         let selectedHour = hours[hourPickerView.selectedRow(inComponent: 0)]
-        let selectedMinute = minutes[minutePickerView.selectedRow(inComponent: 1)]
+        let selectedMinute = minutes[hourPickerView.selectedRow(inComponent: 1)]
+
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.shot.date)
+
+        components.hour = selectedHour
+        components.minute = selectedMinute
+        
+        self.shot.date = calendar.date(from: components) ?? Date()
+
         txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
         txtFieldHours.resignFirstResponder()
     }
     
     @objc func setupAmount() {
-        txtAmount.text = "\(amounts[amountPickerView.selectedRow(inComponent: 0)])"
+        let amount = amounts[amountPickerView.selectedRow(inComponent: 0)]
+        txtAmount.text = "\(amount)"
+        self.shot.amount = Int16(amount)
         txtAmount.resignFirstResponder()
     }
 }
