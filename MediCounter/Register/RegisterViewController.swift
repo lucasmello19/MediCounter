@@ -57,5 +57,11 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
         configuracao.performsFirstActionWithFullSwipe = false
         return configuracao
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TookMedicineViewController(nibName: "TookMedicineViewController", bundle: nil)
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

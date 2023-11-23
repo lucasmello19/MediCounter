@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3926792B0F3D6B00162DA1 /* TookMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */; };
+		2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */; };
+		2B39267B2B0F3D6B00162DA1 /* TookMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */; };
+		2B39267C2B0F3D6B00162DA1 /* TookMedicineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3926782B0F3D6B00162DA1 /* TookMedicineCell.xib */; };
 		2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620F42B072FF30042F5BD /* AppDelegate.swift */; };
 		2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620F62B072FF30042F5BD /* SceneDelegate.swift */; };
 		2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B4620FD2B072FF30042F5BD /* MediCounter.xcdatamodeld */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineViewController.swift; sourceTree = "<group>"; };
+		2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineCell.swift; sourceTree = "<group>"; };
+		2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TookMedicineViewController.xib; sourceTree = "<group>"; };
+		2B3926782B0F3D6B00162DA1 /* TookMedicineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TookMedicineCell.xib; sourceTree = "<group>"; };
 		2B4620F12B072FF30042F5BD /* MediCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4620F42B072FF30042F5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B4620F62B072FF30042F5BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3926742B0F3D6B00162DA1 /* Took */ = {
+			isa = PBXGroup;
+			children = (
+				2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */,
+				2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */,
+				2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */,
+				2B3926782B0F3D6B00162DA1 /* TookMedicineCell.xib */,
+			);
+			path = Took;
+			sourceTree = "<group>";
+		};
 		2B4620E82B072FF30042F5BD = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 				2B6B80E72B07481F00240B06 /* TabBarController.swift */,
 				2B6B80D52B07374800240B06 /* Register */,
 				2BAA09102B094D000032DAF9 /* FormRegister */,
+				2B3926742B0F3D6B00162DA1 /* Took */,
 				2B4621002B072FFD0042F5BD /* Assets.xcassets */,
 				2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */,
 				2B4621052B072FFD0042F5BD /* Info.plist */,
@@ -169,6 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4621042B072FFD0042F5BD /* LaunchScreen.storyboard in Resources */,
+				2B39267B2B0F3D6B00162DA1 /* TookMedicineViewController.xib in Resources */,
+				2B39267C2B0F3D6B00162DA1 /* TookMedicineCell.xib in Resources */,
 				2BAA09182B094D7B0032DAF9 /* MediHoursCountCell.xib in Resources */,
 				2B4621012B072FFD0042F5BD /* Assets.xcassets in Resources */,
 				2BAA09142B094D370032DAF9 /* FormRegisterViewController.xib in Resources */,
@@ -186,10 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6B80D82B07376500240B06 /* RegisterViewController.swift in Sources */,
+				2B3926792B0F3D6B00162DA1 /* TookMedicineViewController.swift in Sources */,
 				2BAA09132B094D370032DAF9 /* FormRegisterViewController.swift in Sources */,
 				2B6B80DC2B07381E00240B06 /* RegisterCell.swift in Sources */,
 				2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */,
 				2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */,
+				2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
 				2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */,

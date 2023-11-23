@@ -24,20 +24,13 @@ class FormRegisterViewController: UIViewController {
         self.tableView.isScrollEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoApareceu(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoDesapareceu(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tocouFora))
-        //        tapGesture.cancelsTouchesInView = false
-        //        view.addGestureRecognizer(tapGesture)
         
         setupHoursPicker()
     }
     
     func setupHoursPicker() {
     }
-    
-    @objc func tocouFora() {
-        view.endEditing(true)
-    }
-    
+        
     @objc func tecladoApareceu(_ notification: Notification) {
         if let tecladoSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tecladoSize.height, right: 0)
