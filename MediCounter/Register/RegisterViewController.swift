@@ -15,6 +15,14 @@ class RegisterViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")
         tableView.allowsMultipleSelectionDuringEditing = false
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permissão concedida")
+            } else {
+                print("Permissão negada")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,10 +34,10 @@ class RegisterViewController: UIViewController {
         medicaments = DataManager.shared.medicaments()
         tableView.reloadData()
     }
-
+    
     @IBAction func onClickNewRegister(_ sender: Any) {
         let vc = FormRegisterViewController(nibName: "FormRegisterViewController", bundle: nil)
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -53,15 +61,19 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
         let delete = UIContextualAction(style: .normal, title: "Apagar") { (action, view, completionHandler) in
             let medicament = self.medicaments[indexPath.row]
             let shots = DataManager.shared.shots(medicament: medicament)
+            var requestsIdentifiers: [String] = []
             for shot in shots {
+                let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date ?? Date())"
+                requestsIdentifiers.append(identifier)
                 DataManager.shared.deleteShot(shot: shot)
             }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: requestsIdentifiers)
             DataManager.shared.deleteMedicament(medicament: medicament)
             self.updateMedicaments()
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.red
-
+        
         let config = UISwipeActionsConfiguration(actions: [delete])
         config.performsFirstActionWithFullSwipe = false
         return config
@@ -70,7 +82,7 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TookMedicineViewController(nibName: "TookMedicineViewController", bundle: nil)
         vc.medicament = medicaments[indexPath.row]
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

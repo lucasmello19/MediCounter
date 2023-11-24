@@ -24,11 +24,6 @@ class FormRegisterViewController: UIViewController {
         self.tableView.isScrollEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoApareceu(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoDesapareceu(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        setupHoursPicker()
-    }
-    
-    func setupHoursPicker() {
     }
         
     @objc func tecladoApareceu(_ notification: Notification) {
@@ -50,6 +45,8 @@ class FormRegisterViewController: UIViewController {
         let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? "")
         for shot in shots {
             _ = DataManager.shared.shot(amount: shot.amount, date: shot.date, medicament: medicament)
+            let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date)"
+            self.setupAlarm(title: "MediCount", body: "Tomar \(shot.amount) de \(medicament.medicament ?? String())", date: shot.date, identifier: identifier)
         }
         DataManager.shared.save()
         self.navigationController?.popViewController(animated: true)
@@ -83,7 +80,26 @@ extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate
         return swipeConfiguration
     }
     
-    
+    func setupAlarm(title: String, body: String, date: Date, identifier: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Erro ao configurar o alarme diário: \(error.localizedDescription)")
+            } else {
+                print("Alarme diário configurado com sucesso!")
+            }
+        }
+    }
 }
 
 final public class AutoSizingTableView: UITableView {

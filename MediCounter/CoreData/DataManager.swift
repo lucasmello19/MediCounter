@@ -17,7 +17,7 @@ class DataManager {
         })
         return container
     }()
-
+    
     func save () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -31,9 +31,9 @@ class DataManager {
     }
     
     func medicament(name: String) -> Medicament {
-      let medicament = Medicament(context: persistentContainer.viewContext)
+        let medicament = Medicament(context: persistentContainer.viewContext)
         medicament.medicament = name
-      return medicament
+        return medicament
     }
     
     func shot(amount: Int16, date: Date, medicament: Medicament) -> Shot {
@@ -45,37 +45,37 @@ class DataManager {
     }
     
     func medicaments() -> [Medicament] {
-      let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
-      var fetchedMedicaments: [Medicament] = []
-      do {
-         fetchedMedicaments = try persistentContainer.viewContext.fetch(request)
-      } catch let error {
-         print("Error fetching singers \(error)")
-      }
-      return fetchedMedicaments
+        let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
+        var fetchedMedicaments: [Medicament] = []
+        do {
+            fetchedMedicaments = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching singers \(error)")
+        }
+        return fetchedMedicaments
     }
     
     func shots(medicament: Medicament) -> [Shot] {
-      let request: NSFetchRequest<Shot> = Shot.fetchRequest()
-      request.predicate = NSPredicate(format: "medicament = %@", medicament)
-//      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
-      var fetchedShots: [Shot] = []
-      do {
-          fetchedShots = try persistentContainer.viewContext.fetch(request)
-      } catch let error {
-        print("Error fetching songs \(error)")
-      }
-      return fetchedShots
+        let request: NSFetchRequest<Shot> = Shot.fetchRequest()
+        request.predicate = NSPredicate(format: "medicament = %@", medicament)
+        //      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+        var fetchedShots: [Shot] = []
+        do {
+            fetchedShots = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching songs \(error)")
+        }
+        return fetchedShots
     }
     
     func deleteShot(shot: Shot) {
-      let context = persistentContainer.viewContext
-      context.delete(shot)
-      save()
+        let context = persistentContainer.viewContext
+        context.delete(shot)
+        save()
     }
     func deleteMedicament(medicament: Medicament) {
-      let context = persistentContainer.viewContext
-      context.delete(medicament)
-      save()
+        let context = persistentContainer.viewContext
+        context.delete(medicament)
+        save()
     }
 }
