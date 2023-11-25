@@ -32,7 +32,25 @@ class RegisterViewController: UIViewController {
     
     func updateMedicaments() {
         medicaments = DataManager.shared.medicaments()
+        let date = Date()
+        for medicament in medicaments {
+            if let exp = medicament.expiration, exp < date {
+                deleteMedicament(medicament: medicament)
+            }
+        }
         tableView.reloadData()
+    }
+    
+    func deleteMedicament(medicament: Medicament) {
+        let shots = DataManager.shared.shots(medicament: medicament)
+        var requestsIdentifiers: [String] = []
+        for shot in shots {
+            let identifier = "\(medicament.medicament ?? String())\(String(describing: shot.amount))\(shot.date ?? Date())"
+            requestsIdentifiers.append(identifier)
+            DataManager.shared.deleteShot(shot: shot)
+        }
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: requestsIdentifiers)
+        DataManager.shared.deleteMedicament(medicament: medicament)
     }
     
     @IBAction func onClickNewRegister(_ sender: Any) {
@@ -60,15 +78,7 @@ extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "Apagar") { (action, view, completionHandler) in
             let medicament = self.medicaments[indexPath.row]
-            let shots = DataManager.shared.shots(medicament: medicament)
-            var requestsIdentifiers: [String] = []
-            for shot in shots {
-                let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date ?? Date())"
-                requestsIdentifiers.append(identifier)
-                DataManager.shared.deleteShot(shot: shot)
-            }
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: requestsIdentifiers)
-            DataManager.shared.deleteMedicament(medicament: medicament)
+            self.deleteMedicament(medicament: medicament)
             self.updateMedicaments()
             completionHandler(true)
         }

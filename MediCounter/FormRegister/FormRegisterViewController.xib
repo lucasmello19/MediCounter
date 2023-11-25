@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="scrollView" destination="EyA-e3-md9" id="bJF-93-mN3"/>
                 <outlet property="tableView" destination="dRB-SG-m4f" id="vCi-cd-tM4"/>
+                <outlet property="txtAmountDays" destination="IBA-HB-bUT" id="DyL-G6-jtp"/>
                 <outlet property="txtMedicament" destination="Ma3-Tq-C08" id="3gS-G4-AhA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,13 +30,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1046"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73l-U1-xEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="428.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-Xd-Usk">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="428.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="c0H-g8-g7s">
-                                                    <rect key="frame" x="0.0" y="24" width="393" height="380.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="24" width="393" height="538"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Cy-5Gs">
                                                             <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
@@ -64,8 +65,26 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syM-Nk-0gv">
+                                                            <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="128"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duração do tratamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBA-HB-bUT">
+                                                                    <rect key="frame" x="24" y="0.0" width="345" height="128"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="IBA-HB-bUT" firstAttribute="leading" secondItem="syM-Nk-0gv" secondAttribute="leading" constant="24" id="JAl-ux-8tz"/>
+                                                                <constraint firstAttribute="bottom" secondItem="IBA-HB-bUT" secondAttribute="bottom" id="eYk-ku-tsM"/>
+                                                                <constraint firstAttribute="height" constant="34" id="rYZ-TF-QhU"/>
+                                                                <constraint firstItem="IBA-HB-bUT" firstAttribute="top" secondItem="syM-Nk-0gv" secondAttribute="top" id="svb-Og-CtC"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IBA-HB-bUT" secondAttribute="trailing" constant="24" id="xwp-wu-W5L"/>
+                                                            </constraints>
+                                                        </view>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-SG-m4f" customClass="AutoSizingTableView" customModule="MediCounter" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="68.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="348.33333333333331" width="393" height="73.666666666666686"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="-1" id="ksJ-4s-xWg"/>
@@ -73,7 +92,7 @@
                                                             </connections>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-AO-b0a">
-                                                            <rect key="frame" x="0.0" y="288.66666666666669" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="446" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="vGg-Ji-5zW"/>
                                                             </constraints>
@@ -84,7 +103,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-jk-bMZ">
-                                                            <rect key="frame" x="0.0" y="346.66666666666669" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="504" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="7AP-30-Kcd"/>
                                                             </constraints>

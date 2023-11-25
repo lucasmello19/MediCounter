@@ -16,8 +16,6 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
 
     let hourPickerView = UIPickerView()
     let hours = Array(0...23)
-    
-//    let minutePickerView = UIPickerView()
     let minutes = Array(0...59)
     
     var shot = ShotVO()

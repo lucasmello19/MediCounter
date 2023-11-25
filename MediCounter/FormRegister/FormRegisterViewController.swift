@@ -5,13 +5,17 @@
 
 import UIKit
 
-class FormRegisterViewController: UIViewController {
+class FormRegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var shots: [ShotVO] = [ShotVO()]
     
     @IBOutlet weak var tableView: AutoSizingTableView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var txtMedicament: UITextField!
+    @IBOutlet weak var txtAmountDays: UITextField!
     
+    let amountDaysPicker = UIPickerView()
+    var amountDays: [Any] = ["uso contínuo"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,25 @@ class FormRegisterViewController: UIViewController {
         self.tableView.isScrollEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoApareceu(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tecladoDesapareceu(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        txtAmountDays.inputView = amountDaysPicker
+        amountDaysPicker.delegate = self
+        amountDaysPicker.dataSource = self
+        for i in 1...100 {
+            amountDays.append(i)
+        }
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setupExpitarionDay))
+        toolbar.setItems([doneButton], animated: false)
+        txtAmountDays.inputAccessoryView = toolbar
+    }
+    
+    @objc func setupExpitarionDay() {
+        let amountDay = amountDays[amountDaysPicker.selectedRow(inComponent: 0)]
+        txtAmountDays.text = "\(amountDay)"
+        txtAmountDays.resignFirstResponder()
     }
         
     @objc func tecladoApareceu(_ notification: Notification) {
@@ -41,8 +64,21 @@ class FormRegisterViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func getExperationDate() -> Date? {
+        let expValue = amountDays[amountDaysPicker.selectedRow(inComponent: 0)]
+        if let exp = expValue as? Int {
+            let calendario = Calendar.current
+            if let configDate = calendario.date(bySettingHour: 23, minute: 59, second: 59, of: Date()) {
+                if let expirationDate = calendario.date(byAdding: .day, value: exp, to: configDate) {
+                    return expirationDate
+                }
+            }
+        }
+        return nil
+    }
+    
     @IBAction func onClickSave(_ sender: Any) {
-        let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? "")
+        let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? String(), expiration: getExperationDate())
         for shot in shots {
             _ = DataManager.shared.shot(amount: shot.amount, date: shot.date, medicament: medicament)
             let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date)"
@@ -99,6 +135,26 @@ extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate
                 print("Alarme diário configurado com sucesso!")
             }
         }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return amountDays.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let day = amountDays[row] as? Int {
+            return "\(amountDays[row]) dia(s)"
+        } else {
+            return "\(amountDays[row])"
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            txtAmountDays.text = "\(amountDays[row])"
     }
 }
 

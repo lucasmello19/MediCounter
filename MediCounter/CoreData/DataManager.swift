@@ -30,9 +30,12 @@ class DataManager {
         }
     }
     
-    func medicament(name: String) -> Medicament {
+    func medicament(name: String, expiration: Date?) -> Medicament {
         let medicament = Medicament(context: persistentContainer.viewContext)
         medicament.medicament = name
+        if let exp = expiration {
+            medicament.expiration = exp
+        }
         return medicament
     }
     
