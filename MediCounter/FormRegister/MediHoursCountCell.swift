@@ -12,7 +12,7 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     var idx = 0
     
     let amountPickerView = UIPickerView()
-    let amounts = Array([1,2,3])
+    let amounts: [NSDecimalNumber] = [0.5,1,1.5,2,2.5,3]
 
     let hourPickerView = UIPickerView()
     let hours = Array(0...23)
@@ -113,7 +113,7 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     @objc func setupAmount() {
         let amount = amounts[amountPickerView.selectedRow(inComponent: 0)]
         txtAmount.text = "\(amount)"
-        self.shot.amount = Int16(amount)
+        self.shot.amount = amount
         txtAmount.resignFirstResponder()
     }
 }

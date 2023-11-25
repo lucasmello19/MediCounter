@@ -2,6 +2,9 @@
 //  Medicament+CoreDataProperties.swift
 //  MediCounter
 //
+//  Created by Lucas Mello on 25/11/23.
+//
+//
 
 import Foundation
 import CoreData
@@ -14,6 +17,7 @@ extension Medicament {
     }
 
     @NSManaged public var medicament: String?
+    @NSManaged public var expiration: Date?
     @NSManaged public var shots: NSSet?
 
 }

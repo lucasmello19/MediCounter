@@ -36,7 +36,7 @@ class DataManager {
         return medicament
     }
     
-    func shot(amount: Int16, date: Date, medicament: Medicament) -> Shot {
+    func shot(amount: NSDecimalNumber, date: Date, medicament: Medicament) -> Shot {
         let shot = Shot(context: persistentContainer.viewContext)
         shot.amount = amount
         shot.date = date

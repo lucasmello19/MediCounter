@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Medicament" representedClassName="Medicament" syncable="YES">
+        <attribute name="expiration" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="medicament" optional="YES" attributeType="String"/>
         <relationship name="shots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Shot" inverseName="medicament" inverseEntity="Shot"/>
     </entity>
     <entity name="Shot" representedClassName="Shot" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="took" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="medicament" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicament" inverseName="shots" inverseEntity="Medicament"/>

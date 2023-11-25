@@ -20,7 +20,9 @@ class TookMedicineCell: UITableViewCell {
         formatter.dateFormat = "HH:mm"
         let hours = formatter.string(from: shot.date ?? Date())
         txtHours.text = hours
-        txtAmount.text = "Quantidade: \(shot.amount)"
+        if let amount = shot.amount{
+            txtAmount.text = "Quantidade: \(amount)"
+        }
     }
 
     @IBAction func onClickSwitch(_ sender: Any) {
