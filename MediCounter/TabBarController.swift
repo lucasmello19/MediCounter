@@ -25,7 +25,6 @@ class TabBarController: UITabBarController {
 
         let navRegister = UINavigationController(rootViewController: register)
         let navHistory = UINavigationController(rootViewController: history)
-
         
         self.viewControllers = [navRegister, navHistory]
         
@@ -33,14 +32,8 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBarItem(titulo: String, imagem: UIImage, cor: UIColor) -> UITabBarItem {
-        let imagemColorida = imagem
-
-        let imagemFinal = imagem.withTintColor(cor)
-
         let tabBarItem = UITabBarItem(title: titulo, image: imagem, selectedImage: nil)
         tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: 6, right: 0)
         return tabBarItem
     }
-
-
 }

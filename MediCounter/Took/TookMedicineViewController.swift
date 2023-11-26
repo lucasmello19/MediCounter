@@ -5,16 +5,24 @@
 
 import UIKit
 
-class TookMedicineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var medicament = Medicament()
-    var shots: [Shot] = []
-
+class TookMedicineViewController: UIViewController {
+    // MARK: - Outlets
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableView: AutoSizingTableView!
     @IBOutlet weak var scrollView: UIScrollView!
+
+    // MARK: - Variales
+    var medicament = Medicament()
+    var shots: [Shot] = []
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    // MARK: - Setups
+    func setupView() {
         self.title = medicament.medicament
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.estimatedRowHeight = 88.0
@@ -24,7 +32,10 @@ class TookMedicineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.isScrollEnabled = false
         shots = DataManager.shared.shots(medicament: self.medicament)
     }
-    
+}
+
+extension TookMedicineViewController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: - TableView Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shots.count
     }

@@ -7,6 +7,7 @@ import Foundation
 import CoreData
 
 class DataManager {
+    // MARK: - Variables
     static let shared = DataManager()
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MediCounter")
@@ -18,6 +19,7 @@ class DataManager {
         return container
     }()
     
+    // MARK: - Save
     func save () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -30,6 +32,7 @@ class DataManager {
         }
     }
     
+    // MARK: - Create
     func medicament(name: String, expiration: Date?) -> Medicament {
         let medicament = Medicament(context: persistentContainer.viewContext)
         medicament.medicament = name
@@ -56,7 +59,7 @@ class DataManager {
         return hist
     }
 
-    
+    // MARK: - Gets
     func medicaments() -> [Medicament] {
         let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
         var fetchedMedicaments: [Medicament] = []
@@ -95,6 +98,7 @@ class DataManager {
         return fetchedHistorys
     }
     
+    // MARK: - Delets
     func deleteShot(shot: Shot) {
         let context = persistentContainer.viewContext
         context.delete(shot)

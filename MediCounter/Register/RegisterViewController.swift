@@ -6,16 +6,14 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    // MARK: - Variables
     @IBOutlet weak var tableView: UITableView!
     var medicaments: [Medicament] = []
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Medicamentos"
-        self.tableView.estimatedRowHeight = 88.0
-        self.tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")
-        tableView.allowsMultipleSelectionDuringEditing = false
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
@@ -24,11 +22,28 @@ class RegisterViewController: UIViewController {
                 print("Permissão negada")
             }
         }
+        
+        self.setupTableView()
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateMedicaments()
+    }
+    // MARK: - Actions
+    
+    @IBAction func onClickNewRegister(_ sender: Any) {
+        let vc = FormRegisterViewController(nibName: "FormRegisterViewController", bundle: nil)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    // MARK: - Setup
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 88.0
+        self.tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")
+        tableView.allowsMultipleSelectionDuringEditing = false
     }
     
     func updateMedicaments() {
@@ -53,15 +68,10 @@ class RegisterViewController: UIViewController {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: requestsIdentifiers)
         DataManager.shared.deleteMedicament(medicament: medicament)
     }
-    
-    @IBAction func onClickNewRegister(_ sender: Any) {
-        let vc = FormRegisterViewController(nibName: "FormRegisterViewController", bundle: nil)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension RegisterViewController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: - TableView Datasource and Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicaments.count
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074C04232B14041600A54318 /* AutoSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C04222B14041600A54318 /* AutoSizingTableView.swift */; };
 		078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EC8132B0FF0B2006A078C /* ShotVO.swift */; };
 		2B0C85EA2B12C1C900CBC7D2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E82B12C1C900CBC7D2 /* HistoryViewController.swift */; };
 		2B0C85EB2B12C1C900CBC7D2 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C85E92B12C1C900CBC7D2 /* HistoryViewController.xib */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074C04222B14041600A54318 /* AutoSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingTableView.swift; sourceTree = "<group>"; };
 		078EC8132B0FF0B2006A078C /* ShotVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotVO.swift; sourceTree = "<group>"; };
 		2B0C85E82B12C1C900CBC7D2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		2B0C85E92B12C1C900CBC7D2 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074C04212B14033F00A54318 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				074C04222B14041600A54318 /* AutoSizingTableView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2B0C85E72B12C12600CBC7D2 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 				2B3926742B0F3D6B00162DA1 /* Took */,
 				2B0C85E72B12C12600CBC7D2 /* History */,
 				2BC5DAA72B0F48D400C59845 /* CoreData */,
+				074C04212B14033F00A54318 /* Utils */,
 				2B4621002B072FFD0042F5BD /* Assets.xcassets */,
 				2B4621022B072FFD0042F5BD /* LaunchScreen.storyboard */,
 				2B4621052B072FFD0042F5BD /* Info.plist */,
@@ -272,6 +283,7 @@
 				2BC5DAB02B0F48D400C59845 /* Shot+CoreDataClass.swift in Sources */,
 				2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */,
 				2BC5DAAD2B0F48D400C59845 /* DataManager.swift in Sources */,
+				074C04232B14041600A54318 /* AutoSizingTableView.swift in Sources */,
 				078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,

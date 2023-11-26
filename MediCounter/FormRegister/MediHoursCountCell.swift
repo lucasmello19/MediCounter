@@ -5,10 +5,12 @@
 
 import UIKit
 
-class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
+class MediHoursCountCell: UITableViewCell {
+    // MARK: - Outlets
     @IBOutlet weak var txtFieldHours: UITextField!
     @IBOutlet weak var txtAmount: UITextField!
     
+    // MARK: - Variables
     var idx = 0
     
     let amountPickerView = UIPickerView()
@@ -22,66 +24,7 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     var isAmountOk = false
     var isHoursOk = false
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        if pickerView == amountPickerView {
-            return 1
-        } else {
-            return 2
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == amountPickerView {
-            return amounts.count
-        } else {
-            if component == 0 {
-                return hours.count
-            } else {
-                return minutes.count
-            }
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == amountPickerView {
-            return "\(amounts[row]) unidade(s)"
-        } else {
-            
-            if component == 0 {
-                return "\(hours[row])h"
-            } else {
-                return "\(minutes[row])min"
-            }
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == amountPickerView {
-            let amount = amounts[row]
-            txtAmount.text = "\(amount)"
-            self.shot.amount = amount
-            isAmountOk = true
-            setupIsOk()
-
-        } else {
-            let selectedHour = hours[hourPickerView.selectedRow(inComponent: 0)]
-            let selectedMinute = minutes[hourPickerView.selectedRow(inComponent: 1)]
-            
-            let calendar = Calendar.current
-            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.shot.date)
-
-            components.hour = selectedHour
-            components.minute = selectedMinute
-            
-            self.shot.date = calendar.date(from: components) ?? Date()
-
-            isHoursOk = true
-            setupIsOk()
-
-            txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
-        }
-    }
-    
+    // MARK: - Setups
     func setupCell(idx: Int, shot: ShotVO) {
         self.idx = idx
         self.shot = shot
@@ -140,5 +83,67 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     
     func setupIsOk() {
         shot.isOk = isHoursOk && isAmountOk
+    }
+}
+
+extension MediHoursCountCell: UIPickerViewDelegate, UIPickerViewDataSource {
+    // MARK: - PickerView Datasource and Delegate
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView == amountPickerView {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == amountPickerView {
+            return amounts.count
+        } else {
+            if component == 0 {
+                return hours.count
+            } else {
+                return minutes.count
+            }
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == amountPickerView {
+            return "\(amounts[row]) unidade(s)"
+        } else {
+            if component == 0 {
+                return "\(hours[row])h"
+            } else {
+                return "\(minutes[row])min"
+            }
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == amountPickerView {
+            let amount = amounts[row]
+            txtAmount.text = "\(amount)"
+            self.shot.amount = amount
+            isAmountOk = true
+            setupIsOk()
+
+        } else {
+            let selectedHour = hours[hourPickerView.selectedRow(inComponent: 0)]
+            let selectedMinute = minutes[hourPickerView.selectedRow(inComponent: 1)]
+            
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.shot.date)
+
+            components.hour = selectedHour
+            components.minute = selectedMinute
+            
+            self.shot.date = calendar.date(from: components) ?? Date()
+
+            isHoursOk = true
+            setupIsOk()
+
+            txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
+        }
     }
 }

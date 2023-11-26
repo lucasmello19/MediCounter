@@ -2,18 +2,18 @@
 //  HistoryCell.swift
 //  MediCounter
 //
-//  Created by Lucas Mello on 25/11/23.
-//
 
 import UIKit
 
 class HistoryCell: UITableViewCell {
+    // MARK: - Outlets
     @IBOutlet weak var lblMedicament: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var lblDateAg: UILabel!
     @IBOutlet weak var lblDateEffective: UILabel!
     
+    // MARK: - Setups
     func setup(history: History) {
         lblMedicament.text = "Histórico do Medicamento: \(history.medicament ?? String())"
         lblDate.text = "Data: \(getDate(date: history.dateEffective ?? Date()))"
@@ -43,5 +43,4 @@ class HistoryCell: UITableViewCell {
         
         return dataFormatada
     }
-
 }

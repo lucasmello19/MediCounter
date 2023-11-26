@@ -5,10 +5,14 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HistoryViewController: UIViewController {
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Variables
     var historys: [History] = []
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Histórico"
@@ -22,9 +26,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(animated)
         historys = DataManager.shared.historys()
         tableView.reloadData()
-
     }
-    
+}
+
+extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: - TableView Datasource and Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historys.count
     }
