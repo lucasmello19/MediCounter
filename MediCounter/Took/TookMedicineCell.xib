@@ -22,13 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="61"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Quantidade: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-tK-qKt">
-                                <rect key="frame" x="24" y="20" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMB-c4-taF">
-                                <rect key="frame" x="153" y="20" width="250" height="21"/>
+                                <rect key="frame" x="197.66666666666666" y="20" width="104.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,16 +33,21 @@
                                     <action selector="onClickSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="j34-0u-woR"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMB-c4-taF">
+                                <rect key="frame" x="24" y="20.666666666666668" width="43" height="20.000000000000004"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CMB-c4-taF" firstAttribute="leading" secondItem="Aub-tK-qKt" secondAttribute="trailing" constant="24" id="4Kv-UW-GMQ"/>
                             <constraint firstItem="gEC-ab-4re" firstAttribute="centerY" secondItem="DIH-wR-FHt" secondAttribute="centerY" id="6Sf-iD-gwB"/>
-                            <constraint firstItem="gEC-ab-4re" firstAttribute="leading" secondItem="CMB-c4-taF" secondAttribute="trailing" constant="24" id="Dun-t1-7Nj"/>
                             <constraint firstItem="Aub-tK-qKt" firstAttribute="centerY" secondItem="DIH-wR-FHt" secondAttribute="centerY" id="ECQ-6J-u6c"/>
-                            <constraint firstItem="Aub-tK-qKt" firstAttribute="leading" secondItem="DIH-wR-FHt" secondAttribute="leading" constant="24" id="gEs-PB-KaD"/>
+                            <constraint firstItem="CMB-c4-taF" firstAttribute="leading" secondItem="DIH-wR-FHt" secondAttribute="leading" constant="24" id="dGw-nV-riC"/>
                             <constraint firstItem="CMB-c4-taF" firstAttribute="centerY" secondItem="DIH-wR-FHt" secondAttribute="centerY" id="hM7-7H-Dc9"/>
                             <constraint firstAttribute="trailing" secondItem="gEC-ab-4re" secondAttribute="trailing" constant="24" id="rg1-qT-mBt"/>
+                            <constraint firstItem="Aub-tK-qKt" firstAttribute="centerX" secondItem="DIH-wR-FHt" secondAttribute="centerX" id="sBg-I5-1PR"/>
                         </constraints>
                     </view>
                 </subviews>

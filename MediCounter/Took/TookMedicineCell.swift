@@ -14,7 +14,12 @@ class TookMedicineCell: UITableViewCell {
     
     func setupCell(shot: Shot) {
         self.shot = shot
+        if !isToday(date: self.shot.date ?? Date()) {
+            self.shot.date = Date()
+            self.shot.took = false
+        }
         sTook.isOn = shot.took
+        sTook.isUserInteractionEnabled = !shot.took
         
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -24,8 +29,22 @@ class TookMedicineCell: UITableViewCell {
             txtAmount.text = "Quantidade: \(amount)"
         }
     }
-
+    
     @IBAction func onClickSwitch(_ sender: Any) {
+        self.shot.took = true
+        sTook.isUserInteractionEnabled = false
+        _ = DataManager.shared.history(amount: shot.amount ?? NSDecimalNumber(), date: Date(), medicament: shot.medicament?.medicament ?? String())
+        DataManager.shared.save()
+    }
+    
+    func isToday(date: Date) -> Bool {
+        let calendar = Calendar.current
         
+        let today = calendar.dateComponents([.year, .month, .day], from: Date())
+        let date = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        return today.year == date.year &&
+        today.month == date.month &&
+        today.day == date.day
     }
 }

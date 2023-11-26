@@ -47,6 +47,15 @@ class DataManager {
         return shot
     }
     
+    func history(amount: NSDecimalNumber, date: Date, medicament: String) -> History {
+        let hist = History(context: persistentContainer.viewContext)
+        hist.amount = amount
+        hist.date = date
+        hist.medicament = medicament
+        return hist
+    }
+
+    
     func medicaments() -> [Medicament] {
         let request: NSFetchRequest<Medicament> = Medicament.fetchRequest()
         var fetchedMedicaments: [Medicament] = []
@@ -61,7 +70,8 @@ class DataManager {
     func shots(medicament: Medicament) -> [Shot] {
         let request: NSFetchRequest<Shot> = Shot.fetchRequest()
         request.predicate = NSPredicate(format: "medicament = %@", medicament)
-        //      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+
         var fetchedShots: [Shot] = []
         do {
             fetchedShots = try persistentContainer.viewContext.fetch(request)
@@ -69,6 +79,19 @@ class DataManager {
             print("Error fetching songs \(error)")
         }
         return fetchedShots
+    }
+    
+    func historys() -> [History] {
+        let request: NSFetchRequest<History> = History.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+
+        var fetchedHistorys: [History] = []
+        do {
+            fetchedHistorys = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching singers \(error)")
+        }
+        return fetchedHistorys
     }
     
     func deleteShot(shot: Shot) {

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="MediCounter" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="DuM-Gv-HgF" id="cBj-eH-qsu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +20,34 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdq-kw-os0">
-                    <rect key="frame" x="169.33333333333334" y="415.66666666666669" width="54.666666666666657" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPP-Gl-ldn">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DuM-Gv-HgF">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="i2N-iH-GWL"/>
+                                <outlet property="delegate" destination="-1" id="M3d-KO-txY"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="DuM-Gv-HgF" secondAttribute="bottom" id="9pp-no-kq8"/>
+                        <constraint firstItem="DuM-Gv-HgF" firstAttribute="leading" secondItem="UPP-Gl-ldn" secondAttribute="leading" id="Fqo-Jg-j7I"/>
+                        <constraint firstAttribute="trailing" secondItem="DuM-Gv-HgF" secondAttribute="trailing" id="U7F-3A-zYV"/>
+                        <constraint firstItem="DuM-Gv-HgF" firstAttribute="top" secondItem="UPP-Gl-ldn" secondAttribute="top" id="Ues-EM-p1h"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="rdq-kw-os0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="T7o-UC-mT8"/>
-                <constraint firstItem="rdq-kw-os0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qQa-c8-dKA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UPP-Gl-ldn" secondAttribute="bottom" id="EDD-HR-HUk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UPP-Gl-ldn" secondAttribute="trailing" id="FOX-o4-X41"/>
+                <constraint firstItem="UPP-Gl-ldn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="b3o-5v-hlO"/>
+                <constraint firstItem="UPP-Gl-ldn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gaf-h4-Q2w"/>
             </constraints>
             <point key="canvasLocation" x="127" y="20"/>
         </view>

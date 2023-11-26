@@ -6,7 +6,6 @@
 import Foundation
 import CoreData
 
-
 extension Medicament {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Medicament> {

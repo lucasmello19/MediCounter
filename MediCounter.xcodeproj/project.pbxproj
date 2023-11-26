@@ -10,6 +10,10 @@
 		078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EC8132B0FF0B2006A078C /* ShotVO.swift */; };
 		2B0C85EA2B12C1C900CBC7D2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85E82B12C1C900CBC7D2 /* HistoryViewController.swift */; };
 		2B0C85EB2B12C1C900CBC7D2 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C85E92B12C1C900CBC7D2 /* HistoryViewController.xib */; };
+		2B0C85F22B12E0E900CBC7D2 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F02B12E0E900CBC7D2 /* History+CoreDataClass.swift */; };
+		2B0C85F32B12E0E900CBC7D2 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F12B12E0E900CBC7D2 /* History+CoreDataProperties.swift */; };
+		2B0C85F62B12E3CC00CBC7D2 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C85F42B12E3CC00CBC7D2 /* HistoryCell.swift */; };
+		2B0C85F72B12E3CC00CBC7D2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C85F52B12E3CC00CBC7D2 /* HistoryCell.xib */; };
 		2B3926792B0F3D6B00162DA1 /* TookMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */; };
 		2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */; };
 		2B39267B2B0F3D6B00162DA1 /* TookMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */; };
@@ -40,6 +44,10 @@
 		078EC8132B0FF0B2006A078C /* ShotVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotVO.swift; sourceTree = "<group>"; };
 		2B0C85E82B12C1C900CBC7D2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		2B0C85E92B12C1C900CBC7D2 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		2B0C85F02B12E0E900CBC7D2 /* History+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2B0C85F12B12E0E900CBC7D2 /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B0C85F42B12E3CC00CBC7D2 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		2B0C85F52B12E3CC00CBC7D2 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		2B3926752B0F3D6B00162DA1 /* TookMedicineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineViewController.swift; sourceTree = "<group>"; };
 		2B3926762B0F3D6B00162DA1 /* TookMedicineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TookMedicineCell.swift; sourceTree = "<group>"; };
 		2B3926772B0F3D6B00162DA1 /* TookMedicineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TookMedicineViewController.xib; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 			children = (
 				2B0C85E82B12C1C900CBC7D2 /* HistoryViewController.swift */,
 				2B0C85E92B12C1C900CBC7D2 /* HistoryViewController.xib */,
+				2B0C85F42B12E3CC00CBC7D2 /* HistoryCell.swift */,
+				2B0C85F52B12E3CC00CBC7D2 /* HistoryCell.xib */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -162,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				2BC5DAA82B0F48D400C59845 /* DataManager.swift */,
+				2B0C85F02B12E0E900CBC7D2 /* History+CoreDataClass.swift */,
+				2B0C85F12B12E0E900CBC7D2 /* History+CoreDataProperties.swift */,
 				2BC5DAA92B0F48D400C59845 /* Medicament+CoreDataProperties.swift */,
 				2BC5DAAA2B0F48D400C59845 /* Medicament+CoreDataClass.swift */,
 				2BC5DAAB2B0F48D400C59845 /* Shot+CoreDataClass.swift */,
@@ -231,6 +243,7 @@
 				2B4621042B072FFD0042F5BD /* LaunchScreen.storyboard in Resources */,
 				2B39267B2B0F3D6B00162DA1 /* TookMedicineViewController.xib in Resources */,
 				2B39267C2B0F3D6B00162DA1 /* TookMedicineCell.xib in Resources */,
+				2B0C85F72B12E3CC00CBC7D2 /* HistoryCell.xib in Resources */,
 				2B0C85EB2B12C1C900CBC7D2 /* HistoryViewController.xib in Resources */,
 				2BAA09182B094D7B0032DAF9 /* MediHoursCountCell.xib in Resources */,
 				2B4621012B072FFD0042F5BD /* Assets.xcassets in Resources */,
@@ -255,15 +268,18 @@
 				2BC5DAAE2B0F48D400C59845 /* Medicament+CoreDataProperties.swift in Sources */,
 				2B4620F52B072FF30042F5BD /* AppDelegate.swift in Sources */,
 				2BAA09172B094D7B0032DAF9 /* MediHoursCountCell.swift in Sources */,
+				2B0C85F32B12E0E900CBC7D2 /* History+CoreDataProperties.swift in Sources */,
 				2BC5DAB02B0F48D400C59845 /* Shot+CoreDataClass.swift in Sources */,
 				2B39267A2B0F3D6B00162DA1 /* TookMedicineCell.swift in Sources */,
 				2BC5DAAD2B0F48D400C59845 /* DataManager.swift in Sources */,
 				078EC8142B0FF0B2006A078C /* ShotVO.swift in Sources */,
 				2B6B80E92B07481F00240B06 /* TabBarController.swift in Sources */,
 				2B4620F72B072FF30042F5BD /* SceneDelegate.swift in Sources */,
+				2B0C85F62B12E3CC00CBC7D2 /* HistoryCell.swift in Sources */,
 				2BC5DAAF2B0F48D400C59845 /* Medicament+CoreDataClass.swift in Sources */,
 				2BC5DAB12B0F48D400C59845 /* Shot+CoreDataProperties.swift in Sources */,
 				2B0C85EA2B12C1C900CBC7D2 /* HistoryViewController.swift in Sources */,
+				2B0C85F22B12E0E900CBC7D2 /* History+CoreDataClass.swift in Sources */,
 				2B4620FF2B072FF30042F5BD /* MediCounter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

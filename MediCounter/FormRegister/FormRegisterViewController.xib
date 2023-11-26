@@ -30,13 +30,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="1046"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73l-U1-xEf">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="588"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcz-Xd-Usk">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="586"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="588"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="c0H-g8-g7s">
-                                                    <rect key="frame" x="0.0" y="24" width="393" height="538"/>
+                                                    <rect key="frame" x="0.0" y="24" width="393" height="540"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Cy-5Gs">
                                                             <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
@@ -84,7 +84,7 @@
                                                             </constraints>
                                                         </view>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-SG-m4f" customClass="AutoSizingTableView" customModule="MediCounter" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="348.33333333333331" width="393" height="73.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="348.33333333333331" width="393" height="75.666666666666686"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <connections>
                                                                 <outlet property="dataSource" destination="-1" id="ksJ-4s-xWg"/>
@@ -92,23 +92,23 @@
                                                             </connections>
                                                         </tableView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-AO-b0a">
-                                                            <rect key="frame" x="0.0" y="446" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="448" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="vGg-Ji-5zW"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Adicionar"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="+1 Horário"/>
                                                             <connections>
                                                                 <action selector="onClickAdd:" destination="-1" eventType="touchUpInside" id="8w7-LM-c6f"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-jk-bMZ">
-                                                            <rect key="frame" x="0.0" y="504" width="393" height="34"/>
+                                                            <rect key="frame" x="0.0" y="506" width="393" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="7AP-30-Kcd"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Salvar"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="Salvar medicamento"/>
                                                             <connections>
                                                                 <action selector="onClickSave:" destination="-1" eventType="touchUpInside" id="IRC-4o-j7V"/>
                                                             </connections>

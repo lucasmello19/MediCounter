@@ -42,7 +42,41 @@ class FormRegisterViewController: UIViewController, UIPickerViewDelegate, UIPick
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(setupExpitarionDay))
         toolbar.setItems([doneButton], animated: false)
         txtAmountDays.inputAccessoryView = toolbar
+        txtMedicament.delegate = self
+        
+        self.setupBackButton()
     }
+    
+    func setupBackButton() {
+        let backButton = UIBarButtonItem(
+            title: "< Voltar",
+            style: .plain,
+            target: self,
+            action: #selector(customBackButtonAction)
+        )
+        
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(customBackButtonAction))
+        swipeRecognizer.direction = .right
+
+        self.navigationController?.navigationBar.addGestureRecognizer(swipeRecognizer)
+
+    }
+    
+    @objc func customBackButtonAction() {
+        let alert = UIAlertController(
+            title: "Ops",
+            message: "Tem certeza de que deseja voltar sem salvar as alterações?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { action in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     
     @objc func setupExpitarionDay() {
         let amountDay = amountDays[amountDaysPicker.selectedRow(inComponent: 0)]
@@ -79,18 +113,39 @@ class FormRegisterViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func onClickSave(_ sender: Any) {
-        let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? String(), expiration: getExperationDate())
-        for shot in shots {
-            _ = DataManager.shared.shot(amount: shot.amount, date: shot.date, medicament: medicament)
-            let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date)"
-            self.setupAlarm(title: "MediCount", body: "Tomar \(shot.amount) de \(medicament.medicament ?? String())", date: shot.date, identifier: identifier)
+        if setupAlertError() {
+            let medicament = DataManager.shared.medicament(name: txtMedicament.text ?? String(), expiration: getExperationDate())
+            for shot in shots {
+                _ = DataManager.shared.shot(amount: shot.amount, date: shot.date, medicament: medicament)
+                let identifier = "\(medicament.medicament ?? String())\(shot.amount)\(shot.date)"
+                self.setupAlarm(title: "MediCount", body: "Tomar \(shot.amount) de \(medicament.medicament ?? String())", date: shot.date, identifier: identifier)
+            }
+            DataManager.shared.save()
+            self.navigationController?.popViewController(animated: true)
         }
-        DataManager.shared.save()
-        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func setupAlertError() -> Bool{
+        if txtMedicament.text?.isEmpty ?? false {
+            setupAlert(message: "Preencha o nome do medicamento!")
+            return false
+        } else if txtAmountDays.text?.isEmpty ?? false {
+            setupAlert(message: "Preencha a duração do tratamento!")
+            return false
+        }
+        return true
+    }
+    
+    func setupAlert(message: String) {
+        let alerta = UIAlertController(title: "Ops", message: message, preferredStyle: .alert)
+
+        let acaoOK = UIAlertAction(title: "OK", style: .default) { (acao) in }
+        alerta.addAction(acaoOK)
+        present(alerta, animated: true, completion: nil)
     }
 }
 
-extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate {
+extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shots.count
     }
@@ -107,9 +162,9 @@ extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-            // Adicione aqui a lógica para a ação de exclusão
-            print("Delete action triggered for row \(indexPath.row)")
+        let deleteAction = UIContextualAction(style: .destructive, title: "Apagar") { (action, view, completionHandler) in
+            self.shots.remove(at: indexPath.row)
+            tableView.reloadData()
             completionHandler(true)
         }
         
@@ -157,6 +212,12 @@ extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             txtAmountDays.text = "\(amountDays[row])"
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 }
 
 final public class AutoSizingTableView: UITableView {
