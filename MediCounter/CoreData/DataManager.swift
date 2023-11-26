@@ -47,10 +47,11 @@ class DataManager {
         return shot
     }
     
-    func history(amount: NSDecimalNumber, date: Date, medicament: String) -> History {
+    func history(amount: NSDecimalNumber, dateTook: Date, dateEffective: Date, medicament: String) -> History {
         let hist = History(context: persistentContainer.viewContext)
         hist.amount = amount
-        hist.date = date
+        hist.dateTook = dateTook
+        hist.dateEffective = dateEffective
         hist.medicament = medicament
         return hist
     }
@@ -83,7 +84,7 @@ class DataManager {
     
     func historys() -> [History] {
         let request: NSFetchRequest<History> = History.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        request.sortDescriptors = [NSSortDescriptor(key: "dateEffective", ascending: false)]
 
         var fetchedHistorys: [History] = []
         do {

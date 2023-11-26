@@ -15,7 +15,14 @@ class TookMedicineCell: UITableViewCell {
     func setupCell(shot: Shot) {
         self.shot = shot
         if !isToday(date: self.shot.date ?? Date()) {
-            self.shot.date = Date()
+            let calendario = Calendar.current
+            let componentsDate = calendario.dateComponents([.hour, .minute, .second], from: self.shot.date ?? Date())
+            if let newDate = calendario.date(bySettingHour: componentsDate.hour ?? 0,
+                                             minute: componentsDate.minute ?? 0,
+                                             second: componentsDate.second ?? 0,
+                                             of: Date()) {
+                self.shot.date = newDate
+            }
             self.shot.took = false
         }
         sTook.isOn = shot.took
@@ -33,7 +40,7 @@ class TookMedicineCell: UITableViewCell {
     @IBAction func onClickSwitch(_ sender: Any) {
         self.shot.took = true
         sTook.isUserInteractionEnabled = false
-        _ = DataManager.shared.history(amount: shot.amount ?? NSDecimalNumber(), date: Date(), medicament: shot.medicament?.medicament ?? String())
+        _ = DataManager.shared.history(amount: shot.amount ?? NSDecimalNumber(), dateTook: self.shot.date ?? Date(), dateEffective: Date(), medicament: shot.medicament?.medicament ?? String())
         DataManager.shared.save()
     }
     

@@ -2,9 +2,6 @@
 //  History+CoreDataProperties.swift
 //  MediCounter
 //
-//  Created by Lucas Mello on 25/11/23.
-//
-//
 
 import Foundation
 import CoreData
@@ -18,7 +15,8 @@ extension History {
 
     @NSManaged public var medicament: String?
     @NSManaged public var amount: NSDecimalNumber?
-    @NSManaged public var date: Date?
+    @NSManaged public var dateTook: Date?
+    @NSManaged public var dateEffective: Date?
 
 }
 
