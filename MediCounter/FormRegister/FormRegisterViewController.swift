@@ -132,6 +132,13 @@ class FormRegisterViewController: UIViewController, UIPickerViewDelegate, UIPick
         } else if txtAmountDays.text?.isEmpty ?? false {
             setupAlert(message: "Preencha a duração do tratamento!")
             return false
+        } else {
+            for shot in shots {
+                if !shot.isOk {
+                    setupAlert(message: "Preencha corretamente a dose e o horário!")
+                    return false
+                }
+            }
         }
         return true
     }
@@ -162,14 +169,17 @@ extension FormRegisterViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Apagar") { (action, view, completionHandler) in
-            self.shots.remove(at: indexPath.row)
-            tableView.reloadData()
-            completionHandler(true)
+        if indexPath.row != 0 {
+            let deleteAction = UIContextualAction(style: .destructive, title: "Apagar") { (action, view, completionHandler) in
+                self.shots.remove(at: indexPath.row)
+                tableView.reloadData()
+                completionHandler(true)
+            }
+            
+            let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return swipeConfiguration
         }
-        
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
-        return swipeConfiguration
+        return nil
     }
     
     func setupAlarm(title: String, body: String, date: Date, identifier: String) {

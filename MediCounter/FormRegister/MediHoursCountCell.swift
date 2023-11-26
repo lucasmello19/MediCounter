@@ -19,6 +19,8 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     let minutes = Array(0...59)
     
     var shot = ShotVO()
+    var isAmountOk = false
+    var isHoursOk = false
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == amountPickerView {
@@ -55,10 +57,27 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == amountPickerView {
-            txtAmount.text = "\(amounts[row])"
+            let amount = amounts[row]
+            txtAmount.text = "\(amount)"
+            self.shot.amount = amount
+            isAmountOk = true
+            setupIsOk()
+
         } else {
             let selectedHour = hours[hourPickerView.selectedRow(inComponent: 0)]
             let selectedMinute = minutes[hourPickerView.selectedRow(inComponent: 1)]
+            
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.shot.date)
+
+            components.hour = selectedHour
+            components.minute = selectedMinute
+            
+            self.shot.date = calendar.date(from: components) ?? Date()
+
+            isHoursOk = true
+            setupIsOk()
+
             txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
         }
     }
@@ -106,6 +125,8 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
 
         txtFieldHours.text = String(format: "%02d:%02d", selectedHour, selectedMinute)
         txtFieldHours.resignFirstResponder()
+        isHoursOk = true
+        setupIsOk()
     }
     
     @objc func setupAmount() {
@@ -113,5 +134,11 @@ class MediHoursCountCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDat
         txtAmount.text = "\(amount)"
         self.shot.amount = amount
         txtAmount.resignFirstResponder()
+        isAmountOk = true
+        setupIsOk()
+    }
+    
+    func setupIsOk() {
+        shot.isOk = isHoursOk && isAmountOk
     }
 }
