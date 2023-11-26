@@ -11,6 +11,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Medicamentos"
         self.tableView.estimatedRowHeight = 88.0
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "RegisterCell", bundle: nil), forCellReuseIdentifier: "RegisterCell")

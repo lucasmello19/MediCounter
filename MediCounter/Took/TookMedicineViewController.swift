@@ -15,14 +15,13 @@ class TookMedicineViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = medicament.medicament
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.estimatedRowHeight = 88.0
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "TookMedicineCell", bundle: nil), forCellReuseIdentifier: "TookMedicineCell")
         tableView.allowsMultipleSelectionDuringEditing = false
         self.tableView.isScrollEnabled = false
-        
-        lblTitle.text = medicament.medicament
         shots = DataManager.shared.shots(medicament: self.medicament)
     }
     

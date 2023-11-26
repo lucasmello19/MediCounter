@@ -19,6 +19,7 @@ class FormRegisterViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Cadastro"
         tableView.isEditing = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.estimatedRowHeight = 88.0
